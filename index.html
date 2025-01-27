@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yonathan Tesfaye</title>
+    
+<style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+        }
+        header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            color: #b22222;
+            /* Move Welcome header to the right */
+            margin-left: 90px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            /* Move the navigation to the left */
+            margin-right: 50px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #b22222;
+        }
+        .main-content {
+            display: flex;
+            /* Change flex direction to column */
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 40px;
+            width: 90%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        .main-content .text {
+            /* Move text to the left */
+            margin-left: 65px;
+        }
+        .main-content h2 {
+            font-size: 3rem;
+            margin: 0;
+            color: #333;
+        }
+        .main-content p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #666;
+        }
+        .main-content .image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-left: 0px;
+            margin-top: 50px;
+        }
+        .main-content .image img {
+            /* Image size and distortion fix */
+            width: 250px; 
+            height: 300px; 
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #999;
+        }
+        footer a {
+            color: #b22222;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome</h1>
+    <nav>
+        <a href="#contact">Contact</a>
+        <a href="#projects">Projects</a>
+        <a href="#next">Next Steps</a>
+    </nav>
+</header>
+
+<div class="main-content">
+    <div class="text">
+        <h2>Yonathan <br>Tesfaye</h2>
+        <p>San Francisco, California</p>
+        <div class="image">
+            <img src="images/suit.jpg" alt="Me in a suit">
+
+
+    </div>
+    </div>
+    
+</div>
+
+
+</body>
+</html>
