@@ -1,151 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Personal Site</title>
-  <meta name="description" content="A simple personal website with an About section and accomplishments." />
-  <style>
-    :root {
-      --bg: #0f172a;      /* slate-900 */
-      --card: #111827;    /* gray-900 */
-      --text: #e5e7eb;    /* gray-200 */
-      --muted: #9ca3af;   /* gray-400 */
-      --accent: #60a5fa;  /* blue-400 */
-      --ring: rgba(96,165,250,.4);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: linear-gradient(180deg, #0b1220, var(--bg));
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    header {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 18px;
-      align-items: center;
-      background: color-mix(in oklab, var(--card) 90%, black 10%);
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: 16px;
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    .avatar {
-      width: 96px; height: 96px;
-      border-radius: 14px;
-      background: #0b1220;
-      border: 1px solid rgba(255,255,255,.08);
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: var(--muted);
-    }
-    h1 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0; }
-    h2 { font-size: 1.2rem; margin: 0 0 6px; color: var(--muted); font-weight: 600; }
-    p { margin: 0.2rem 0 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            color: #000000;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        section {
+            margin-bottom: 300px;
+        }
+        
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            color: #555;
+        }
 
-    main {
-      margin-top: 22px;
-      display: grid;
-      gap: 18px;
-    }
-    .card {
-      background: color-mix(in oklab, var(--card) 92%, black 8%);
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: 16px;
-      padding: 18px;
-    }
-    .card h3 { margin: 0 0 10px; font-size: 1.1rem; }
-    .about { font-size: 1rem; }
+        .personal-paragraph {
+            font-size: 1.05em;
+            line-height: 1.75;
+            margin-top: 0;
+            width: 70%;
+            margin-left: auto;          /* pushes the whole block to the right */
+            margin-right: 0;
+            text-align: justify;        /* makes the text spacing even on both sides */
+            text-align-last: left;     /* aligns the last line to the right */
+        }
 
-    ul.accomplishments { padding-left: 18px; margin: 0; }
-    ul.accomplishments li { margin: 8px 0; }
 
-    .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.12);
-      text-decoration: none;
-      color: var(--text);
-      background: #0b1220;
-      box-shadow: 0 6px 14px rgba(0,0,0,.25);
-      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.28); }
-    .btn:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
-    .btn.accent { background: linear-gradient(135deg, #0b1220 0%, #0b223a 60%); border-color: rgba(96,165,250,.4); }
-
-    footer { color: var(--muted); font-size: .9rem; text-align: center; margin: 22px 0 10px; }
-    .muted { color: var(--muted); }
-
-    /* Small screens */
-    @media (max-width: 520px) {
-      header { grid-template-columns: 72px 1fr; }
-      .avatar { width: 72px; height: 72px; }
-    }
-  </style>
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #777;
+        }
+        
+        a {
+            color: #348eb8;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="avatar" aria-hidden="true">IMG</div>
-      <div>
-        <h1>Your Name</h1>
-        <h2>Short tagline — Student • Developer • Curious Human</h2>
-        <p class="muted">City, Country · <a href="mailto:you@example.com" class="btn" style="padding:4px 8px">you@example.com</a></p>
-      </div>
-    </header>
+    <div class="container">
 
-    <main>
-      <section class="card">
-        <h3>About Me</h3>
-        <p class="about">
-          I'm a <strong>computer science</strong> student who loves building tiny tools
-          that make life easier. I enjoy Python, clean UI, and learning in public.
-          Outside of tech, you'll find me at the gym, reading sci‑fi, or making coffee.
-        </p>
-      </section>
-
-      <section class="card">
-        <h3>Accomplishments</h3>
-        <ul class="accomplishments">
-          <li>Built a personal budgeting app used by friends and family.</li>
-          <li>Contributed to an open‑source project (docs + bug fixes).</li>
-          <li>Completed a machine learning course project on image classification.</li>
-          <li>Presented a talk on "Getting Started with Git" at a campus club.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Links</h3>
-        <div class="links">
-          <a class="btn accent" href="#" target="_blank" rel="noopener">Resume (PDF)</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Email</a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © <span id="y"></span> Your Name · Built with plain HTML + CSS
-    </footer>
-  </div>
-
-  <script>
-    // Update footer year automatically
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+        <header>
+            <h1><a href="index.html" title="Home"> Home |</a> 
+				<a href="research.html" title="Research"> Research |</a>
+				<a href="stuff.html" title="Stuff"> Stuff </a></h1>
+        </header>
+        <section>
+            <p class="personal-paragraph">
+                Hello! I'm <strong class="highlight">Yonathan Tesfaye</strong>, a computer science student currently in Malibu. However, my home is in San Francisco, California. I attend Pepperdine Univeristy, with a interest 
+                in attaining my bachelor's degree. My research is currently in Algorithims, Data and AI. For my interests, 
+                I enjoy delving into informational videos and hiking. In my free time I tend to make chess videos.
+            </p>
+        </section>
+        
+        <section>
+            <p>Email: yonathan.tesfaye@pepperdine.edu</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ytesfaye810/" target="_blank">linkedin.com/in/ytesfaye810</a></p>
+            <p>GitHub: <a href="https://www.github.com/natifrr/" target="_blank">github.com/natifrr</a></p>
+        </section>
+    </div>
 </body>
 </html>
